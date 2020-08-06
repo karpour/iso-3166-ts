@@ -17,5 +17,9 @@
   ],
   "author": "Thomas Novotny",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karpour/iso-3166-ts"
+  }
 }
