@@ -1,0 +1,21 @@
+{
+  "name": "iso-3166-ts",
+  "version": "1.0.0",
+  "description": "ISO3166 types for Typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "iso",
+    "3166",
+    "alpha",
+    "iso3166",
+    "typescript"
+  ],
+  "author": "Thomas Novotny",
+  "license": "ISC",
+  "dependencies": {}
+}
