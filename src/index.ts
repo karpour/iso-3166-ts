@@ -1,5 +1,5 @@
 /** ISO3166 Alpha 2 country code -> country name*/
-export const ISO_3166_ALPHA_2: { [key: string]: string; } = {
+export const ISO_3166_ALPHA_2 = {
     "AF": 'Afghanistan',
     "AX": 'Åland Islands',
     "AL": 'Albania',
