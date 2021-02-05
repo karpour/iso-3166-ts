@@ -1,5 +1,5 @@
-/** ISO3166 Alpha 2 country code -> country name*/
-export declare const ISO_3166_ALPHA_2: {
+/** ISO3166 Alpha 2 country code -> country name */
+export declare const ISO_3166_ALPHA_2_MAPPINGS: {
     AF: string;
     AX: string;
     AL: string;
@@ -251,4 +251,6 @@ export declare const ISO_3166_ALPHA_2: {
     ZW: string;
 };
 /** ISO3166 Alpha 2 country code */
-export declare type Iso3166Alpha2Code = keyof typeof ISO_3166_ALPHA_2;
+export declare type Iso3166Alpha2Code = keyof typeof ISO_3166_ALPHA_2_MAPPINGS;
+/** All Iso3166 alpha 2 country codes */
+export declare const ISO_3166_ALPHA_2: Iso3166Alpha2Code[];

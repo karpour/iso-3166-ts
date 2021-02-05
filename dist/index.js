@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ISO_3166_ALPHA_2 = void 0;
-/** ISO3166 Alpha 2 country code -> country name*/
-exports.ISO_3166_ALPHA_2 = {
+exports.ISO_3166_ALPHA_2 = exports.ISO_3166_ALPHA_2_MAPPINGS = void 0;
+/** ISO3166 Alpha 2 country code -> country name */
+exports.ISO_3166_ALPHA_2_MAPPINGS = {
     "AF": 'Afghanistan',
     "AX": 'Åland Islands',
     "AL": 'Albania',
@@ -253,3 +253,5 @@ exports.ISO_3166_ALPHA_2 = {
     "ZM": 'Zambia',
     "ZW": 'Zimbabwe'
 };
+/** All Iso3166 alpha 2 country codes */
+exports.ISO_3166_ALPHA_2 = Object.keys(exports.ISO_3166_ALPHA_2_MAPPINGS);
