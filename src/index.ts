@@ -1,5 +1,5 @@
-/** ISO3166 Alpha 2 country code -> country name*/
-export const ISO_3166_ALPHA_2 = {
+/** ISO3166 Alpha 2 country code -> country name */
+export const ISO_3166_ALPHA_2_MAPPINGS = {
     "AF": 'Afghanistan',
     "AX": 'Åland Islands',
     "AL": 'Albania',
@@ -252,4 +252,7 @@ export const ISO_3166_ALPHA_2 = {
 };
 
 /** ISO3166 Alpha 2 country code */
-export type Iso3166Alpha2Code = keyof typeof ISO_3166_ALPHA_2;
+export type Iso3166Alpha2Code = keyof typeof ISO_3166_ALPHA_2_MAPPINGS;
+
+/** All Iso3166 alpha 2 country codes */
+export const ISO_3166_ALPHA_2: Iso3166Alpha2Code[] = Object.keys(ISO_3166_ALPHA_2_MAPPINGS) as Iso3166Alpha2Code[];
