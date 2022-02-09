@@ -250,10 +250,31 @@ export const ISO_3166_ALPHA_2_MAPPINGS = {
     "ZA": 'South Africa',
     "ZM": 'Zambia',
     "ZW": 'Zimbabwe'
-};
+} as const;
 
 /** ISO3166 Alpha 2 country code */
 export type Iso3166Alpha2Code = keyof typeof ISO_3166_ALPHA_2_MAPPINGS;
 
 /** All Iso3166 alpha 2 country codes */
 export const ISO_3166_ALPHA_2: Iso3166Alpha2Code[] = Object.keys(ISO_3166_ALPHA_2_MAPPINGS) as Iso3166Alpha2Code[];
+
+/**
+ * Check if a string is a valid ISO3166 Alpha 2 country code
+ * @param iso3166Alpha2CountryCode Country code to check, e.g. "US"
+ * @returns true if countryCode is a valid ISO3166 Alpha 2 country code
+ */
+export function isIso3166Alpha2Code(iso3166Alpha2CountryCode: string): iso3166Alpha2CountryCode is Iso3166Alpha2Code {
+    return ISO_3166_ALPHA_2.indexOf(iso3166Alpha2CountryCode as Iso3166Alpha2Code) != -1;
+}
+
+/**
+ * Get english-language country name by ISO3166 Alpha 2 country code
+ * @param iso3166Alpha2CountryCode 2-letter country code, such as "US"
+ * @returns the full country name or undefined if the code is invalid
+ */
+export function getIso3166CountryName(iso3166Alpha2CountryCode: string): string | undefined {
+    if (isIso3166Alpha2Code(iso3166Alpha2CountryCode)) {
+        return ISO_3166_ALPHA_2_MAPPINGS[iso3166Alpha2CountryCode];
+    }
+    return undefined;
+}

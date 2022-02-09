@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ISO_3166_ALPHA_2 = exports.ISO_3166_ALPHA_2_MAPPINGS = void 0;
+exports.getIso3166CountryName = exports.isIso3166Alpha2Code = exports.ISO_3166_ALPHA_2 = exports.ISO_3166_ALPHA_2_MAPPINGS = void 0;
 /** ISO3166 Alpha 2 country code -> country name */
 exports.ISO_3166_ALPHA_2_MAPPINGS = {
     "AD": 'Andorra',
@@ -256,3 +256,24 @@ exports.ISO_3166_ALPHA_2_MAPPINGS = {
 };
 /** All Iso3166 alpha 2 country codes */
 exports.ISO_3166_ALPHA_2 = Object.keys(exports.ISO_3166_ALPHA_2_MAPPINGS);
+/**
+ * Check if a string is a valid ISO3166 Alpha 2 country code
+ * @param iso3166Alpha2CountryCode Country code to check, e.g. "US"
+ * @returns true if countryCode is a valid ISO3166 Alpha 2 country code
+ */
+function isIso3166Alpha2Code(iso3166Alpha2CountryCode) {
+    return exports.ISO_3166_ALPHA_2.indexOf(iso3166Alpha2CountryCode) != -1;
+}
+exports.isIso3166Alpha2Code = isIso3166Alpha2Code;
+/**
+ * Get english-language country name by ISO3166 Alpha 2 country code
+ * @param iso3166Alpha2CountryCode 2-letter country code, such as "US"
+ * @returns the full country name or undefined if the code is invalid
+ */
+function getIso3166CountryName(iso3166Alpha2CountryCode) {
+    if (isIso3166Alpha2Code(iso3166Alpha2CountryCode)) {
+        return exports.ISO_3166_ALPHA_2_MAPPINGS[iso3166Alpha2CountryCode];
+    }
+    return undefined;
+}
+exports.getIso3166CountryName = getIso3166CountryName;
